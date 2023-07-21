@@ -1,0 +1,1 @@
+sc.exe create SDPWorkers binpath= C:\Users\apeppas\PersonalRepos\Workers\Workers.exe start= auto

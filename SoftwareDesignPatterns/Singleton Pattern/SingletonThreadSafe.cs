@@ -15,7 +15,7 @@
             {
                 lock(threadLock)
                 {
-                    if (instance is null) // double check
+                    if (instance is null) // double check in critical area
                     {
                         instance = new SingletonThreadSafe();
                     }

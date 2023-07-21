@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternsApi", "Design
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expressions", "Expressions\Expressions.csproj", "{A26F838C-1C81-4C31-AF74-2B8A71E45100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{E25D207E-ABC8-4DAC-B5DD-C716F378CE2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{E25D207E-ABC8-4DAC-B5DD-C716F378CE2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workers", "Workers\Workers.csproj", "{7EC59C01-9CE4-484C-A1FE-E735D9DBD699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E25D207E-ABC8-4DAC-B5DD-C716F378CE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E25D207E-ABC8-4DAC-B5DD-C716F378CE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E25D207E-ABC8-4DAC-B5DD-C716F378CE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC59C01-9CE4-484C-A1FE-E735D9DBD699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC59C01-9CE4-484C-A1FE-E735D9DBD699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC59C01-9CE4-484C-A1FE-E735D9DBD699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC59C01-9CE4-484C-A1FE-E735D9DBD699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
