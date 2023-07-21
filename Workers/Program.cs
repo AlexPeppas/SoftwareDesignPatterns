@@ -1,6 +1,7 @@
 using Workers;
 using Serilog;
 
+// create serilog to specify path for logging.
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
@@ -14,7 +15,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     {
         services.AddHostedService<BaseWorker>();
     })
-    .UseSerilog()
+    .UseSerilog() // use custom logger provider.
     .Build();
 
 host.Run();
