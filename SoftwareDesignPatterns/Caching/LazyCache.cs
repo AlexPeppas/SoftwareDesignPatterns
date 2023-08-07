@@ -7,7 +7,7 @@ namespace SoftwareDesignPatterns.Caching
     public sealed class LazyCache : IDisposable //IMemoryCache
     {
         private ConcurrentDictionary<string, Lazy<object>> internalStore;
-        private readonly object threadLock;
+        private readonly object threadLock = new();
 
         public LazyCache()
         {

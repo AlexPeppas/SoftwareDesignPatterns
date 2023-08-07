@@ -36,5 +36,56 @@ namespace UnitTests.Caching
             Assert.AreEqual(personBoxed, samePersonBoxed);
             Assert.IsInstanceOfType(personBoxed, typeof(Person));
         }
+
+        [TestMethod]
+        public void LazyCache_Disposed_UsingBrackets()
+        {
+            using (var cache = new LazyCache())
+            {
+                var cacheKey = "1";
+
+                var personBoxed = cache.GetOrAdd(cacheKey, (cts) =>
+                {
+                    Console.WriteLine("initializing...");
+                    return new Person
+                    {
+                        Id = 1,
+                        Name = "Alex",
+                        LastName = "Pep",
+                    };
+                },
+                this.cancellationToken);
+
+                var samePersonBoxed = cache.TryGetValue(cacheKey);
+
+                Assert.AreEqual(personBoxed, samePersonBoxed);
+                Assert.IsInstanceOfType(personBoxed, typeof(Person));
+            }
+        }
+
+        [TestMethod]
+        public void LazyCache_Disposed_UsingNoBrackets()
+        {
+            using var cache = new LazyCache();
+            
+            var cacheKey = "1";
+
+            var personBoxed = cache.GetOrAdd(cacheKey, (cts) =>
+            {
+                Console.WriteLine("initializing...");
+                return new Person
+                {
+                    Id = 1,
+                    Name = "Alex",
+                    LastName = "Pep",
+                };
+            },
+            this.cancellationToken);
+
+            var samePersonBoxed = cache.TryGetValue(cacheKey);
+
+            Assert.AreEqual(personBoxed, samePersonBoxed);
+            Assert.IsInstanceOfType(personBoxed, typeof(Person));
+        }
     }
 }
