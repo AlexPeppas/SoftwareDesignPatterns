@@ -1,3 +1,5 @@
+using DesignPatternsApi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Custom Router to introduce /experiment/healthcheck/ping
+app.UseExperimentRouteBuilder();
 
 app.Run();
