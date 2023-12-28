@@ -1,3 +1,5 @@
+using DesignPatternsApi.DependencyInjection;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesignPatternsApi
@@ -13,11 +15,21 @@ namespace DesignPatternsApi
             _logger = logger;
         }
 
-        [HttpPost(Name = "demonstrate/decorator")]
+        [HttpPost]
+        [Route("demonstrate/decorator")]
         [Validator]
         public IActionResult DemoDecorater([FromBody] DemoItem item)
         {
             Console.WriteLine("Succeed");
+
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("DI/keyedServices")]
+        public async Task<IActionResult> KeyedDIDemo([FromKeyedServices("dummyCache")] IDummyMemoryCache cache)
+        {
+            await cache.RememberMe();
 
             return Ok();
         }
